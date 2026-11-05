@@ -2,7 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 import {
   ArrowUpRight,
   ArrowLeft,
-  CheckCircle2,
+  Info,
   Clock,
   Mail,
   Phone,
@@ -37,8 +37,8 @@ const SLOT_VALUES: readonly SlotValue[] = [
   "later",
 ] as const;
 
-const CONTACT_PHONE = "+212 5 24 00 00 00";
-const CONTACT_EMAIL = "conciergerie@khazef.ma";
+const CONTACT_PHONE = "+212 5 00 00 00 00";
+const CONTACT_EMAIL = "contact@khazef.ma";
 
 const INITIAL_FORM_STATE: BookingFormState = {
   fullName: "",
@@ -83,6 +83,7 @@ export function BookingCTA({ typology }: BookingCTAProps) {
     }));
   };
 
+  // Site vitrine sans backend : rien n'est envoyé, et le message qui suit le dit.
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     setIsSubmitted(true);
@@ -200,7 +201,7 @@ export function BookingCTA({ typology }: BookingCTAProps) {
                   className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-gold"
                   aria-hidden="true"
                 >
-                  <CheckCircle2 className="h-7 w-7" strokeWidth={1.5} />
+                  <Info className="h-7 w-7" strokeWidth={1.5} />
                 </span>
                 <div className="space-y-3">
                   <h3 className="font-display text-2xl text-primary">

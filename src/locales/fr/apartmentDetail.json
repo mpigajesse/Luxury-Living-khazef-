@@ -317,10 +317,10 @@
       "privacy": "Vos données restent strictement confidentielles et ne sont utilisées que pour cette demande."
     },
     "success": {
-      "heading": "Merci — nous vous rappelons sous 24 h",
+      "heading": "Site de démonstration",
       "bodyPrefix": "Votre demande de visite privée pour la typologie ",
-      "bodySuffix": " a bien été transmise à notre conciergerie. Elle vous contactera au créneau convenu.",
-      "newRequest": "Nouvelle demande"
+      "bodySuffix": " n'a pas été transmise : ce site vitrine ne dispose d'aucun serveur d'envoi.",
+      "newRequest": "Revenir au formulaire"
     }
   },
   "related": {
