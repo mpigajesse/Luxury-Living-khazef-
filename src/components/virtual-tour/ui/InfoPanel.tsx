@@ -65,13 +65,16 @@ export function InfoPanel() {
 
   const translate = isOpen ? "translateX(0%)" : "translateX(105%)";
 
+  // Le panneau fermé est rangé hors écran à droite : ce cadre fixe le rogne,
+  // sinon il élargit la page d'environ 400 px (défilement horizontal).
   return (
+    <div className="pointer-events-none fixed inset-0 z-40 overflow-hidden">
     <aside
       ref={panelRef}
       role="dialog"
       aria-hidden={!isOpen}
       aria-label={hotspot?.title ?? t("ui.infoPanel.fallbackLabel")}
-      className="pointer-events-auto fixed right-0 top-0 z-40 h-full"
+      className="pointer-events-auto absolute right-0 top-0 h-full"
       style={{
         width: 380,
         maxWidth: "92vw",
@@ -130,6 +133,7 @@ export function InfoPanel() {
         </div>
       )}
     </aside>
+    </div>
   );
 }
 

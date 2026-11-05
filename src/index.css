@@ -200,8 +200,12 @@
   }
 
   /* Transition entre pages */
+  /* « backwards » et non « both » : avec « both », la fin de l'animation laisse
+     une transformation identité sur <main>, qui devient alors le bloc conteneur
+     de tous les éléments position:fixed de la page (dialogue d'accueil et panneau
+     de la visite 360° décalés, page qui saute au chargement). */
   .page-enter {
-    animation: page-fade-up 0.7s var(--ease-luxe) both;
+    animation: page-fade-up 0.7s var(--ease-luxe) backwards;
   }
 
   .reveal {
