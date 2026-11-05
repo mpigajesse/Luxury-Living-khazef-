@@ -182,7 +182,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label={t("nav.primaryNavigation")}>
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-8" aria-label={t("nav.primaryNavigation")}>
           {PRIMARY.map((item) => (
             <DesktopNavLink key={item.to} item={item} onImage={onImage} label={t(item.labelKey)} />
           ))}
@@ -238,7 +238,7 @@ const Navbar = () => {
           {/* CTA */}
           <Link
             to="/contact"
-            className="group relative ml-2 inline-flex items-center gap-2 bg-gradient-gold-bright text-primary px-5 py-3 text-[12px] uppercase tracking-[0.22em] font-medium shadow-luxe-sm transition-all duration-500 hover:shadow-luxe-md hover:-translate-y-0.5 overflow-hidden"
+            className="group relative ml-2 inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-gradient-gold-bright text-primary px-5 py-3 text-[12px] uppercase tracking-[0.22em] font-medium shadow-luxe-sm transition-all duration-500 hover:shadow-luxe-md hover:-translate-y-0.5 overflow-hidden"
           >
             <span className="relative z-10">{t("cta.privateVisit")}</span>
             <ArrowUpRight className="relative z-10 h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
@@ -255,7 +255,7 @@ const Navbar = () => {
 
         {/* Mobile trigger — always-visible pill so the user can find it on any hero */}
         <button
-          className={`lg:hidden relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors shadow-luxe-sm ${
+          className={`xl:hidden relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors shadow-luxe-sm ${
             onImage
               ? "border-white/70 bg-primary/60 text-white backdrop-blur-md hover:bg-primary/80"
               : "border-border/70 bg-background/90 text-primary backdrop-blur-md hover:border-gold hover:text-gold"
@@ -286,7 +286,7 @@ const Navbar = () => {
         createPortal(
           <div
             aria-hidden={!open}
-            className={`fixed inset-0 z-[100] lg:hidden transition-opacity duration-500 ${
+            className={`fixed inset-0 z-[100] xl:hidden transition-opacity duration-500 ${
               open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
           >
@@ -424,22 +424,22 @@ const Navbar = () => {
                 <span className="eyebrow text-gold text-[10px]">{t("cta.directContact")}</span>
               </div>
               <a
-                href="tel:+212000000000"
+                href="tel:+212500000000"
                 className="group flex items-center gap-3 py-2 text-sm text-primary hover:text-gold hover:translate-x-1 transition-all duration-500"
               >
                 <span className="inline-flex h-7 w-7 items-center justify-center border border-gold/40 group-hover:bg-gold/10 transition-colors">
                   <Phone className="h-3.5 w-3.5 text-gold" />
                 </span>
-                +212 0 00 00 00 00
+                +212 5 00 00 00 00
               </a>
               <a
-                href="mailto:contact@luxuryliving.ma"
+                href="mailto:contact@khazef.ma"
                 className="group flex items-center gap-3 py-2 text-sm text-primary hover:text-gold hover:translate-x-1 transition-all duration-500"
               >
                 <span className="inline-flex h-7 w-7 items-center justify-center border border-gold/40 group-hover:bg-gold/10 transition-colors">
                   <Mail className="h-3.5 w-3.5 text-gold" />
                 </span>
-                contact@luxuryliving.ma
+                contact@khazef.ma
               </a>
             </div>
           </nav>
@@ -485,7 +485,7 @@ function DesktopNavLink({ item, onImage, label }: { item: NavItem; onImage: bool
       to={item.to}
       end={item.to === "/"}
       className={({ isActive }) =>
-        `group relative text-[13px] uppercase tracking-[0.18em] font-medium transition-colors ${
+        `group relative whitespace-nowrap text-[13px] uppercase tracking-[0.18em] font-medium transition-colors ${
           isActive
             ? "text-gold"
             : onImage
