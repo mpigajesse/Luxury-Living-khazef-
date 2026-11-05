@@ -2,6 +2,9 @@
 
 > Site vitrine immobilier de prestige · Résidence R+6 · Safi, Maroc
 
+**Démo en ligne : [luxury-living-khazef.onrender.com](https://luxury-living-khazef.onrender.com)**
+Site de démonstration : les formulaires n'envoient rien. La démo tourne sur une offre gratuite et met environ 50 secondes à se réveiller au premier accès.
+
 [![CI](https://github.com/jesse-act/khazef-porcelain-elegance/actions/workflows/ci.yml/badge.svg)](https://github.com/jesse-act/khazef-porcelain-elegance/actions/workflows/ci.yml)
 [![Deploy](https://github.com/jesse-act/khazef-porcelain-elegance/actions/workflows/deploy.yml/badge.svg)](https://github.com/jesse-act/khazef-porcelain-elegance/actions/workflows/deploy.yml)
 
