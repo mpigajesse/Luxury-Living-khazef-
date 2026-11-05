@@ -10,16 +10,17 @@ const Contact = () => {
   const { t } = useTranslation("contact");
   const [loading, setLoading] = useState(false);
 
+  // Site vitrine sans backend : le formulaire ne transmet rien. On le dit au
+  // visiteur au lieu d'afficher un faux « Demande envoyée ».
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      (e.target as HTMLFormElement).reset();
-      toast.success(t("form.toast.title"), {
-        description: t("form.toast.description"),
+      toast.info(t("form.demo.title"), {
+        description: t("form.demo.description"),
       });
-    }, 900);
+    }, 400);
   };
 
   return (
@@ -130,6 +131,7 @@ const Contact = () => {
                 </div>
               </li>
             </ul>
+            <p className="mt-6 text-xs text-muted-foreground/80">{t("info.demoNote")}</p>
           </div>
 
           <div className="aspect-[4/3] overflow-hidden border border-border shadow-luxe-sm">

@@ -24,23 +24,12 @@ function nextRoom(current: RoomId, direction: 1 | -1): RoomId {
 
 /**
  * Invisible side-effect component:
- * - sets <html lang="fr"> while mounted
  * - honours prefers-reduced-motion (disables XR, keeps audio off)
  * - wires keyboard shortcuts: ArrowLeft / ArrowRight navigate rooms, Escape closes panels
  */
 function VirtualTourAccessibility({
   onReducedMotion,
 }: VirtualTourAccessibilityProps): null {
-  useEffect(() => {
-    const html = document.documentElement;
-    const previousLang = html.lang;
-    html.lang = "fr";
-
-    return () => {
-      html.lang = previousLang;
-    };
-  }, []);
-
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) {
       return;

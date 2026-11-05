@@ -40,9 +40,9 @@
     "submit": "Envoyer la demande",
     "submitting": "Envoi en cours…",
     "disclaimer": "En soumettant ce formulaire, vous acceptez d'être contacté par un conseiller Luxury Living.",
-    "toast": {
-      "title": "Demande envoyée",
-      "description": "Notre conseiller vous répondra sous 24h."
+    "demo": {
+      "title": "Site de démonstration",
+      "description": "Ce formulaire n'envoie aucune donnée : aucune demande n'a été transmise."
     }
   },
   "info": {
@@ -59,6 +59,7 @@
     "email": {
       "reply": "Réponse sous 24h"
     },
-    "mapTitle": "Plan d'accès Luxury Living"
+    "mapTitle": "Plan d'accès Luxury Living",
+    "demoNote": "Site de démonstration — coordonnées indicatives."
   }
 }

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { MousePointer2, CircleDot, Maximize2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -68,7 +69,9 @@ function HelpOverlay(): JSX.Element | null {
 
   useEffect(() => {
     if (visible && buttonRef.current) {
-      buttonRef.current.focus();
+      // preventScroll : sans lui, le navigateur fait défiler la page jusqu'au
+      // bouton au lieu de garder la visite en haut de l'écran.
+      buttonRef.current.focus({ preventScroll: true });
     }
   }, [visible]);
 
@@ -97,13 +100,15 @@ function HelpOverlay(): JSX.Element | null {
     return null;
   }
 
-  return (
+  // Rendu dans <body> : un dialogue plein écran ne doit dépendre d'aucun
+  // ancêtre transformé (animation d'entrée de page).
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="khazef-help-title"
       aria-describedby="khazef-help-description"
-      className="fixed inset-0 z-50 flex items-center justify-center px-6 bg-background/85 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-[60] flex items-center justify-center px-6 bg-background/85 backdrop-blur-md animate-fade-in"
     >
       <div className="relative w-full max-w-xl rounded-lg border border-gold/30 bg-background/95 p-8 md:p-10 shadow-xl">
         <div className="flex flex-col items-center text-center">
@@ -172,7 +177,8 @@ function HelpOverlay(): JSX.Element | null {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
